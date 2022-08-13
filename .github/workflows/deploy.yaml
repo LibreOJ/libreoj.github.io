@@ -9,7 +9,15 @@ jobs:
     steps:
     - name: Check out
       uses: actions/checkout@v2
-    - name: Deploy
+    - name: Deploy to Cloudflare Pages
+      uses: Menci/pages-action@main
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: menci-libreoj-contest-archive
+        directory: docs
+        branch: main
+    - name: Deploy to Azure
       uses: Azure/static-web-apps-deploy@v1
       with:
         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}

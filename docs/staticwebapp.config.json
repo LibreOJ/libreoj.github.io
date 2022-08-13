@@ -3,8 +3,11 @@
     {
       "route": "/*.{js,css,png,jpg,jpeg,svg,woff,woff2,lrc,ogg,gif}",
       "headers": {
-        "cache-control": "public, max-age=86400, stale-while-revalidate=604800"
+        "cache-control": "public, max-age=604800"
       }
     }
-  ]
+  ],
+  "globalHeaders": {
+    "cache-control": "public, max-age=60"
+  }
 }
